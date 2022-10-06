@@ -1,44 +1,31 @@
-import express from 'express'
-import { Server } from 'http'
+import {Router, Request, Response} from "express"
+const router = Router()
 
 
-const server = express()
-
-server.listen(3000)
-
-server.get('/',(req,res) =>{
-    res.send("Ao da roça!")
+router.get('/',(req: Request,res: Response) =>{
+    res.render('home')
 })
 
-server.get('/login',(req,res) =>{
-    res.send("Página de login")
+router.get('/login',(req: Request,res: Response) =>{
+    res.render('login')
 })
 
-server.get('/noticia/:politica',(req,res) =>{
+router.get('/noticia/:politica',(req: Request,res: Response) =>{
     let politica: string = req.params.politica
     res.send("Noticias: "+politica)
 })
 
-server.get('/esportes/:futebol', (req,res) =>{
+router.get('/esportes/:futebol', (req: Request,res: Response) =>{
     let futebol: string = req.params.futebol
     res.send("Esportes: "+futebol)
 })
 
-server.get('/viagens/:origem-:destino',(req,res) =>{
+router.get('/viagens/:origem-:destino',(req: Request,res: Response) =>{
     let origem:string = req.params.origem
     let destino:string = req.params.destino
 
     res.send(`Procurando trajetos de ${origem} até ${destino}`)
 })
-
-
-
-
-
-
-
-
-
 
 /*import filmes from './filmes'
 import Filmes from './filmes'
@@ -62,5 +49,4 @@ console.log(validator.isEmail("herickczr07@gmail.com"))
 
 console.log ("Olá mundo!")*/
 
-
-
+export default router
