@@ -1,0 +1,37 @@
+{{>partials/header}}
+
+    <link rel="stylesheet" href="">
+    
+    <img src="images/chapolin.jpg" alt="Chapolin">
+    <p> Paragrafo do meu site</p>
+
+
+    <p>Olá, tudo bem? {{user}} </p>
+
+    <h2>Lista de Produtos</h2>
+    <ol>
+        {{#produtos}}
+
+        <li> {{titulo}} - R$ {{preco}}</li>
+
+        {{/produtos}}
+    </ol>
+
+    {{#frases}}
+
+    <li>{{.}}</li>
+
+    {{/frases}}
+
+    
+    {{^frases}}
+        <p>Não temos frases motivacionais hoje</p>
+    {{/frases}}
+
+
+
+{{>partials/footer}}
+
+
+</body>
+</html>

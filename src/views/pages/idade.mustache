@@ -1,0 +1,21 @@
+{{>partials/header}}
+    <h2>Qual o ano que Você nasceu?</h2>
+
+    
+<form method="post" action="idade-resultado">
+    <input type="number" name="anoNascimento" placeholder="Digite o ano que você nasceu" required/><br/>
+    <input type="submit" value="Enviar">
+</form>
+
+
+    {{#mostrarIdade}}
+
+        Você tem {{idade}} anos
+
+    {{/mostrarIdade}}
+
+
+
+{{>partials/footer}}
+
+
